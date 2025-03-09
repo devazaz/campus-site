@@ -1,0 +1,23 @@
+<header>
+  <!-- <button type="button"  class="add-button">
+    Open Drawer
+  </button> -->
+
+  <div style="max-width: 350px; display: flex; align-items: center; justify-content: space-between;">
+    <div><img src="https://campus.aue.ae/Public/Images/aue_logo.png" /></div>
+    <i (click)="showDrawer()" class="pi pi-eye dashboard-icon"></i>
+  </div>
+
+  <p-drawer [(visible)]="visible" position="top" styleClass="topdrawer">
+    <div styleClass="drawer-content">
+      <div class="dashboard-grid">
+        <div *ngFor="let option of rawDashboardOptions" class="dashboard-item">
+          <div class="dashboard-card">
+            <i [class]="option.icon" class="dashboard-icon"></i>
+            <span class="dashboard-name">{{ option.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-drawer>
+</header>

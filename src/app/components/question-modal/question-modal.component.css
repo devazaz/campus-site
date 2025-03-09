@@ -1,0 +1,78 @@
+.modal-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: none;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .close-button {
+    line-height: 24px;
+    color: #666;
+  }
+  
+  .close-button:hover {
+    color: #000;
+  }
+  
+  .rich-text .ql-editor {
+    min-height: 150px; /* Adjust as needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .choice-section {
+    margin-top: 20px;
+    border: 1px dashed #ccc;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .choice-item {
+    margin-bottom: 15px;
+  }
+  
+  .choice-item label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  .action-bar {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  .add-button {
+    background-color: #d4a373 !important; /* Beige color from previous designs */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+  
+  .add-button:hover {
+    background-color: #c3915d; /* Darker shade on hover */
+  }
+
+
+  

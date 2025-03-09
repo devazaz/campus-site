@@ -1,0 +1,121 @@
+<app-header/>
+<div class="create-bar">
+  <div>
+    <div class="text-color heading">Survey Details</div>
+    <div class="text-normal">
+      <span style="color: #b89a5b">List</span> / Survey Details
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="survey-header">
+    <span class="header-title">SURVEY INFORMATION</span>
+    <div class="header-actions">
+      <button class="header-button">Share with Audience</button>
+      <button class="header-button">Finish</button>
+    </div>
+  </div>
+  <div class="form">
+    <!-- First Row -->
+
+    <app-input
+      [label]="'Survey Name (En)*'"
+      [value]="surveyNameEn"
+      [type]="'text'"
+      (valueChange)="onInputChange('surveyNameEn', $event)"
+    ></app-input>
+    <app-input
+      [label]="'Survey Name (Ar)'"
+      [value]="surveyNameAr"
+      [type]="'text'"
+      (valueChange)="onInputChange('surveyNameAr', $event)"
+    ></app-input>
+    <!-- <app-input
+      [label]="'Survey Type'"
+      [value]="surveyType"
+      [type]="'select'"
+      [options]="['General', 'Specific', 'Custom']" 
+      (valueChange)="onInputChange('surveyType', $event)"
+    ></app-input> -->
+
+    <!-- Second Row -->
+    <app-input
+      [label]="'Start Date *'"
+      [value]="startDate"
+      [type]="'datetime-local'"
+      (valueChange)="onInputChange('startDate', $event)"
+    ></app-input>
+    <app-input
+      [label]="'End Date *'"
+      [value]="endDate"
+      [type]="'datetime-local'"
+      (valueChange)="onInputChange('endDate', $event)"
+    ></app-input>
+    <app-input
+      [label]="'Placeholder'"
+      [value]="placeholder"
+      [type]="'text'"
+      (valueChange)="onInputChange('placeholder', $event)"
+    ></app-input>
+  </div>
+  <div class="rich-text">
+    <quill-editor class="quill" [(ngModel)]="richTextContent"></quill-editor>
+  </div>
+  <div class="survey-footer">
+    <button class="footer-button">Update Survey</button>
+  </div>
+</div>
+
+<div class="question-views">
+  <div class="qs-body">
+    <div class="section-header">QUESTION VIEWS</div>
+    <div class="question-card">
+      <div class="question-header">
+        <app-input
+          [label]="'What is your name?'"
+          [value]="placeholder"
+          [type]="'text'"
+          (valueChange)="onInputChange('placeholder', $event)"
+        ></app-input>
+        <div class="question-actions">
+          <button mat-flat-button class="logic-button">Logic</button>
+          <button mat-flat-button class="edit-button">Edit</button>
+          <button mat-flat-button class="delete-button">Delete</button>
+          <button mat-flat-button class="page-break-button">Page Break</button>
+        </div>
+      </div>
+      <!-- <div class="question-content">
+      <mat-form-field appearance="outline">
+        <mat-label>User Text</mat-label>
+        <input matInput disabled />
+      </mat-form-field>
+    </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- Static QUESTION TYPE Section -->
+<div class="question-type">
+  <div class="qs-body">
+    <div class="section-header">QUESTION TYPE</div>
+    <div class="question-type-content">
+      <div class="dropdown-containe">
+        <select name="dropdown" id="dropdown">
+          <option value="" selected disabled>Select an option</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+      <button
+        (click)="openQuestionModal()"
+        mat-flat-button
+        class="add-new-button"
+      >
+        Add New Question
+      </button>
+    </div>
+  </div>
+</div>

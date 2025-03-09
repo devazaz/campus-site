@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import "quill/dist/quill.core.css";
+@import "quill/dist/quill.snow.css";
+@import "primeicons/primeicons.css";
+
+.rich-text .quill .ql-editor {
+  min-height: 200px;
+  background-color: whitesmoke;
+}
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white !important;
+}
+/* 
+.drawer {
+  background-color: white;
+  width: 100%;
+} */
+
+.p-drawer-header {
+  display: none !important;
+  background-color: white;
+  padding: 0px;
+  height: 0px !important;
+}
+.p-drawer-content {
+  min-height: 400px;
+  padding: 20px !important;
+  width: 100%;
+  background-color: white;
+  overflow: auto;
+}

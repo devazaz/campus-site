@@ -1,0 +1,90 @@
+header {
+  background-color: #2f2f2f;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+/* :host ::ng-deep {
+  .p-drawer-top {
+    background-color: #ffffff !important; 
+  }
+  
+} */
+
+
+.drawer-content {
+  background-color: whitesmoke;
+}
+
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.dashboard-item {
+  flex: 0 0 auto;
+  width: calc(10% - 10px);
+}
+
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  height: 100px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #b89a5b;
+}
+
+.dashboard-name {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color : rgb(185, 185, 185)
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: #b89a5b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+/* Customizing PrimeNG drawer */
+:host ::ng-deep .top-drawer {
+  max-height: 80vh;
+  overflow-y: auto;
+}

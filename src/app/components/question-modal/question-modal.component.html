@@ -1,0 +1,29 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h2>QUESTION TEXT:</h2>
+    <button mat-icon-button (click)="onClose()" class="close-button">
+      <!-- <mat-icon>close</mat-icon> -->
+    </button>
+  </div>
+  <div class="rich-text">
+    <quill-editor class="quill" [(ngModel)]="richTextContent"></quill-editor>
+  </div>
+  <div class="choice-section">
+    <div class="choice-item">
+      <app-input
+        [label]="'Placeholder'"
+        [value]="placeholder"
+        [type]="'text'"
+        (valueChange)="onInputChange('placeholder', $event)"
+      ></app-input>
+    </div>
+    <div class="choice-item">
+      <mat-checkbox [(ngModel)]="isRequired"
+        >Is this field required?</mat-checkbox
+      >
+    </div>
+  </div>
+  <div class="action-bar">
+    <button mat-flat-button class="add-button" (click)="onAdd()">Add</button>
+  </div>
+</div>
