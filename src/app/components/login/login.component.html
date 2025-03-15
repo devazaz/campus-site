@@ -1,0 +1,36 @@
+<div class="login-container">
+  <div>
+    <img
+      src="https://systemassets.aue.ae/smarty/admin/assets/images/logo-dark.png"
+      alt="Logo"
+    />
+    <div>Sign In</div>
+    <div>
+      Please enter your login credentials to get access to the campus portal.
+    </div>
+    <app-input
+      [label]="'Survey Name'"
+      [value]="email"
+      [type]="'text'"
+      (valueChange)="onInputChange('email', $event)"
+    ></app-input>
+    <app-input
+      [label]="'Password'"
+      [value]="password"
+      [type]="'text'"
+      (valueChange)="onInputChange('password', $event)"
+    ></app-input>
+
+    <button routerLink="/survey" class="login-button">
+      Sign In
+    </button>
+    <div>Forgot Password?</div>
+  </div>
+  <div class="login-image">
+    <img
+      src="https://systemassets.aue.ae/smarty/admin/assets/images/login.jpg"
+      alt="Login Image"
+    />
+  </div>
+</div>
+<router-outlet></router-outlet>

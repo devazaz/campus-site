@@ -11,6 +11,7 @@ body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: white !important;
+  color: grey;
 }
 /* 
 .drawer {
@@ -30,4 +31,16 @@ body {
   width: 100%;
   background-color: white;
   overflow: auto;
+}
+
+
+.p-tablist-tab-list{
+  background-color: #b89a5b !important;
+  color: white;
+  justify-content: space-between;
+}
+
+.p-tabpanels {
+  background-color: white !important;
+  padding: 0px !important;
 }

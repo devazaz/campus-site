@@ -16,7 +16,8 @@
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 1em;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    color : grey
   }
   
   .input-field:focus {
@@ -24,3 +25,5 @@
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
+
+  

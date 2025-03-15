@@ -1,77 +1,89 @@
 <div class="top-heading">Survey Master</div>
-<div class="container">
-
-  <div class="create-bar">
-    <div class="beige-bar"></div>
-    <div style="">
-      <div class="text-normal">InkGeneral</div>
-      <div class="text-color heading">Create New Survey!</div>
-      <div class="text-normal">Add a new here.</div>
-    </div>
-    <button class="create-button">Create</button>
-  </div>
+<div class="card">
+  <p-tabs class="tabs-container">
+    <p-tablist>
+      @for (tab of tabs; track tab.value) {
+        <p-tab class="tab" [value]="tab.value">{{ tab.title }}</p-tab>
+      }
+    </p-tablist>
+    <!-- No content inside tab panels, as table is outside -->
+    <p-tabpanels>
+      @for (tab of tabs; track tab.value) {
+        <p-tabpanel [value]="tab.value"></p-tabpanel>
+      }
+    </p-tabpanels>
+  </p-tabs>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
-    <ng-container  matColumnDef="name">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
       <th class="column-name" mat-header-cell *matHeaderCellDef>Name</th>
       <td mat-cell *matCellDef="let element">{{ element.name }}</td>
     </ng-container>
 
-    <ng-container  matColumnDef="start_date">
+    <!-- Start Date Column -->
+    <ng-container matColumnDef="start_date">
       <th class="column-name" mat-header-cell *matHeaderCellDef>Start Date</th>
-      <td mat-cell *matCellDef="let element">{{ element.start_date }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.start_date | date }}</td>
     </ng-container>
 
-    <!-- 1) Button named Edit with beige color -->
-    <ng-container  matColumnDef="edit">
+    <!-- Edit Column -->
+    <ng-container matColumnDef="edit">
       <th class="column-name" mat-header-cell *matHeaderCellDef>Edit</th>
       <td mat-cell *matCellDef="let element">
         <button routerLink="/survey-information" mat-flat-button class="beige-button">Edit</button>
       </td>
     </ng-container>
 
-    <!-- 2) View Survey (beige colored) -->
-    <ng-container  matColumnDef="viewSurvey">
+    <!-- View Survey Column -->
+    <ng-container matColumnDef="viewSurvey">
       <th class="column-name" mat-header-cell *matHeaderCellDef>View Survey</th>
       <td mat-cell *matCellDef="let element">
         <button mat-flat-button class="beige-button">View Survey</button>
       </td>
     </ng-container>
 
-    <!-- 3) No Data for odd, View Report for Even -->
-    <ng-container  matColumnDef="reportData">
+    <!-- Report Data Column -->
+    <ng-container matColumnDef="reportData">
       <th class="column-name" mat-header-cell *matHeaderCellDef>Report</th>
       <td mat-cell *matCellDef="let element; let i = index">
         {{ i % 2 === 0 ? "View Report" : "No Data" }}
       </td>
     </ng-container>
 
-    <!-- 4) Button with No Link for odd, Copy Link for Even -->
-    <ng-container  matColumnDef="copyLinkStatus">
+    <!-- Copy Link Status Column -->
+    <ng-container matColumnDef="copyLinkStatus">
       <th class="column-name" mat-header-cell *matHeaderCellDef>Link Status</th>
       <td mat-cell *matCellDef="let element; let i = index">
-        <button mat-flat-button *ngIf="i % 2 === 0" class="beige-button">
-          Copy Link
-        </button>
+        <button mat-flat-button *ngIf="i % 2 === 0" class="beige-button">Copy Link</button>
         <span *ngIf="i % 2 !== 0">No Link</span>
       </td>
     </ng-container>
 
-    <!-- 5) Button Copy Link with beige -->
-    <ng-container  matColumnDef="copyLinkButton">
+    <!-- Copy Link Button Column -->
+    <ng-container matColumnDef="copyLinkButton">
       <th class="column-name" mat-header-cell *matHeaderCellDef>Copy Link</th>
       <td mat-cell *matCellDef="let element">
         <button mat-flat-button class="beige-button">Copy Link</button>
       </td>
     </ng-container>
 
-    <ng-container  matColumnDef="progress">
+    <!-- Progress Column -->
+    <ng-container matColumnDef="progress">
       <th class="column-name" mat-header-cell *matHeaderCellDef>Progress</th>
       <td mat-cell *matCellDef="let element">{{ element.progress }}</td>
     </ng-container>
 
+    <!-- Table Rows -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    [pageSize]="5"
+    [showFirstLastButtons]="true"
+    class="paginator"
+  ></mat-paginator>
 </div>
 <router-outlet></router-outlet>
